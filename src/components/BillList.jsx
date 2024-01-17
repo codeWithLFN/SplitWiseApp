@@ -1,6 +1,5 @@
 //import React from 'react';
 import PropTypes from 'prop-types';
-import './app.css'; // Import the existing app.css file
 
 const BillList = ({ bills }) => {
   return (
