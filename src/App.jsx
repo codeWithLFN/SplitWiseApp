@@ -32,7 +32,7 @@ const App = () => {
   return (
     <div className="container">
       <header className="header">
-        <h1>Bill Split App</h1>
+        <h1>SplitWiseApp</h1>
       </header>
       <BillForm onAddBill={handleAddBill} />
       <BillList bills={bills} />
