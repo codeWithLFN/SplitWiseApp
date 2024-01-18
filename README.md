@@ -1,8 +1,11 @@
-# React + Vite
+# SplitWiseApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SplitWiseApp is a collaborative bill-splitting application built with React. Simplify the process of managing shared expenses among friends or groups. Keep track of individual shares, add bills effortlessly, and maintain transparency in financial interactions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Collaborative Bill-Splitting:** Easily manage shared expenses with friends or groups.
+- **React-Powered:** Built using React for a responsive and dynamic user interface.
+- **Expense Management:** Add bills with descriptions and amounts to track shared expenses.
+- **Individual Share Tracking:** Keep everyone in the loop by tracking individual shares.
+- **Effortless Record Keeping:** Maintain a transparent record of shared expenses.
