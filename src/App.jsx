@@ -57,10 +57,10 @@ const App = () => {
           ))}
         </ul>
         <p>Total: R {calculateIndividualShares().reduce((sum, share) => sum + share, 0).toFixed(2)}</p>
-      </div>
-      <button onClick={handleClear} >
+        <button onClick={handleClear}  className='btn btn-danger'>
         Clear
       </button>
+      </div>
     </div>
   );
 };
