@@ -5,18 +5,24 @@ import BillList from './components/BillList';
 import FriendList from './components/FriendList';
 import './App.css';
 
+// App
 const App = () => {
   const [bills, setBills] = useState([]);
   const [friends, setFriends] = useState([]);
 
+
+  // Add bill
   const handleAddBill = (bill) => {
     setBills([...bills, bill]);
   };
 
+
+  // Add friend
   const handleAddFriend = (friend) => {
     setFriends([...friends, friend]);
   };
 
+  // Calculate individual shares
   const calculateIndividualShares = () => {
     const totalAmount = bills.reduce((sum, bill) => sum + bill.amount, 0);
     const numberOfFriends = friends.length;
@@ -27,6 +33,12 @@ const App = () => {
 
     const individualShare = totalAmount / numberOfFriends;
     return Array(numberOfFriends).fill(individualShare);
+  };
+
+  // Clear button
+  const handleClear = () => {
+    setBills([]);
+    setFriends([]);
   };
 
   return (
@@ -44,7 +56,11 @@ const App = () => {
             <li key={index}>{friends[index]} owes: R {share.toFixed(2)}</li>
           ))}
         </ul>
+        <p>Total: R {calculateIndividualShares().reduce((sum, share) => sum + share, 0).toFixed(2)}</p>
       </div>
+      <button onClick={handleClear} >
+        Clear
+      </button>
     </div>
   );
 };
