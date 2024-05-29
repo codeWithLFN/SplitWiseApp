@@ -1,8 +1,5 @@
-// FriendList.js
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
-
 
 const FriendList = ({ friends, onAddFriend }) => {
   const [newFriend, setNewFriend] = useState('');
@@ -15,24 +12,24 @@ const FriendList = ({ friends, onAddFriend }) => {
   };
 
   return (
-    <div className="list-container">
-      <h2 className="list-header">Friends</h2>
-      <ul className="list">
+    <div className="p-4 ">
+      <h2 className="text-2xl font-semibold mb-4">Friends</h2>
+      <ul className="space-y-2">
         {friends.map((friend, index) => (
-          <li key={index} className="list-item">
+          <li key={index} className="bg-gray-100 p-3 rounded-md">
             {friend}
           </li>
         ))}
       </ul>
-      <div>
+      <div className="mt-4">
         <input
           type="text"
           placeholder="Enter friend's name"
           value={newFriend}
           onChange={(e) => setNewFriend(e.target.value)}
-          className="input-text"
+          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
         />
-        <button onClick={handleAddFriend} className="add-friend-btn">
+        <button onClick={handleAddFriend} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
           Add Friend
         </button>
       </div>
@@ -46,4 +43,3 @@ FriendList.propTypes = {
 };
 
 export default FriendList;
-

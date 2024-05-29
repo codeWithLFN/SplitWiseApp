@@ -1,14 +1,12 @@
-//import React from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
 
 const BillList = ({ bills }) => {
   return (
-    <div className="list-container">
-      <h2 className="list-header">Bills</h2>
-      <ul>
+    <div className="p-4">
+      <h2 className="text-2xl font-semibold mb-4">Bills</h2>
+      <ul className="space-y-2">
         {bills.map((bill, index) => (
-          <li key={index} className="list-item">
+          <li key={index} className="bg-gray-100 p-3 rounded-md">
             {bill.description} - R {bill.amount.toFixed(2)}
           </li>
         ))}

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
 
 const BillForm = ({ onAddBill }) => {
   const [description, setDescription] = useState('');
@@ -14,9 +13,9 @@ const BillForm = ({ onAddBill }) => {
   };
 
   return (
-    <form style={{ marginTop: '20px' }} onSubmit={handleSubmit}>
-      <div style={{ marginBottom: '15px' }}>
-        <label htmlFor="description" style={{ display: 'block', marginBottom: '5px' }}>
+    <form className="mt-4" onSubmit={handleSubmit}>
+      <div className="mb-4">
+        <label htmlFor="description" className="block text-sm font-medium mb-2">
           Description:
         </label>
         <input
@@ -24,11 +23,11 @@ const BillForm = ({ onAddBill }) => {
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
-      <div style={{ marginBottom: '15px' }}>
-        <label htmlFor="amount" style={{ display: 'block', marginBottom: '5px' }}>
+      <div className="mb-4">
+        <label htmlFor="amount" className="block text-sm font-medium mb-2">
           Amount:
         </label>
         <input
@@ -36,19 +35,12 @@ const BillForm = ({ onAddBill }) => {
           id="amount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-          style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
       <button
         type="submit"
-        style={{
-          backgroundColor: '#007bff',
-          color: '#fff',
-          padding: '10px',
-          cursor: 'pointer',
-          border: 'none',
-          borderRadius: '4px',
-        }}
+        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         Add Bill
       </button>

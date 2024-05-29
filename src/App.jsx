@@ -1,21 +1,17 @@
-// App.jsx
 import { useState } from 'react';
 import BillForm from './components/BillForm';
 import BillList from './components/BillList';
 import FriendList from './components/FriendList';
-import './App.css';
 
 // App
 const App = () => {
   const [bills, setBills] = useState([]);
   const [friends, setFriends] = useState([]);
 
-
   // Add bill
   const handleAddBill = (bill) => {
     setBills([...bills, bill]);
   };
-
 
   // Add friend
   const handleAddFriend = (friend) => {
@@ -42,24 +38,35 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <header className="header">
-        <h1>SplitWiseApp</h1>
-      </header>
-      <BillForm onAddBill={handleAddBill} />
-      <BillList bills={bills} />
-      <FriendList friends={friends} onAddFriend={handleAddFriend} />
-      <div className="mt-3">
-        <h2>Individual Shares</h2>
-        <ul>
-          {calculateIndividualShares().map((share, index) => (
-            <li key={index}>{friends[index]} owes: R {share.toFixed(2)}</li>
-          ))}
-        </ul>
-        <p>Total: R {calculateIndividualShares().reduce((sum, share) => sum + share, 0).toFixed(2)}</p>
-        <button onClick={handleClear}  className='btn btn-danger'>
-        Clear
-      </button>
+    <div className="min-h-screen bg-zinc-500 flex items-center justify-center p-6">
+      <div className="container max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <header className="mb-8">
+          <h1 className="text-4xl font-bold text-center text-blue-600">SplitWiseApp</h1>
+        </header>
+        <div className="space-y-6">
+          <BillForm onAddBill={handleAddBill} />
+          <BillList bills={bills} />
+          <FriendList friends={friends} onAddFriend={handleAddFriend} />
+          <div className="bg-gray-100 p-6 rounded-lg shadow">
+            <h2 className="text-2xl font-semibold mb-4">Individual Shares</h2>
+            <ul className="list-disc list-inside space-y-2 mb-4">
+              {calculateIndividualShares().map((share, index) => (
+                <li key={index}>
+                  {friends[index]} owes: R {share.toFixed(2)}
+                </li>
+              ))}
+            </ul>
+            <p className="text-xl font-medium">
+              Total: R {bills.reduce((sum, bill) => sum + bill.amount, 0).toFixed(2)}
+            </p>
+            <button
+              onClick={handleClear}
+              className="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
