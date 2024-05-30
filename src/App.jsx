@@ -41,7 +41,7 @@ const App = () => {
     <div className="min-h-screen bg-zinc-500 flex items-center justify-center p-6">
       <div className="container max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-center text-blue-600">SplitWiseApp</h1>
+          <h1 className="text-4xl font-bold text-center text-blue-600">SplitWise</h1>
         </header>
         <div className="space-y-6">
           <BillForm onAddBill={handleAddBill} />
