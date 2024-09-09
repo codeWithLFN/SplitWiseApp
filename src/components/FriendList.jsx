@@ -12,11 +12,11 @@ const FriendList = ({ friends, onAddFriend }) => {
   };
 
   return (
-    <div className="p-4 ">
-      <h2 className="text-2xl font-semibold mb-4">Friends</h2>
+    <div className="p-4">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Friends</h2>
       <ul className="space-y-2">
         {friends.map((friend, index) => (
-          <li key={index} className="bg-gray-100 p-3 rounded-md">
+          <li key={index} className="bg-gray-50 p-3 rounded-md shadow-sm">
             {friend}
           </li>
         ))}
@@ -27,9 +27,12 @@ const FriendList = ({ friends, onAddFriend }) => {
           placeholder="Enter friend's name"
           value={newFriend}
           onChange={(e) => setNewFriend(e.target.value)}
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"
         />
-        <button onClick={handleAddFriend} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button 
+          onClick={handleAddFriend} 
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
           Add Friend
         </button>
       </div>

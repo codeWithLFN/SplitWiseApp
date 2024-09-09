@@ -15,7 +15,7 @@ const BillForm = ({ onAddBill }) => {
   return (
     <form className="mt-4" onSubmit={handleSubmit}>
       <div className="mb-4">
-        <label htmlFor="description" className="block text-sm font-medium mb-2">
+        <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
           Description:
         </label>
         <input
@@ -23,11 +23,11 @@ const BillForm = ({ onAddBill }) => {
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
       <div className="mb-4">
-        <label htmlFor="amount" className="block text-sm font-medium mb-2">
+        <label htmlFor="amount" className="block text-sm font-medium text-gray-700 mb-2">
           Amount:
         </label>
         <input
@@ -35,12 +35,12 @@ const BillForm = ({ onAddBill }) => {
           id="amount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
       <button
         type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         Add Bill
       </button>
